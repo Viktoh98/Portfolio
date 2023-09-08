@@ -15,9 +15,9 @@ class Projects(models.Model):
     name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     Image = models.ImageField(upload_to='images/')
-    Owner = models.ForeignKey("Figure", on_delete=models.CASCADE, null=False, blank=False)
-    Github_URL = models.URLField(max_length=200)
-    Live_URL = models.URLField(max_length=200)
+    owner = models.ForeignKey(Figure, on_delete=models.CASCADE, null=False, blank=False)
+    Github_URL = models.URLField(max_length=200, blank=True, null=True)
+    Live_URL = models.URLField(max_length=200, blank=True, null=True)
     
     def __str__(self):
         return f"{self.name}"
@@ -26,7 +26,7 @@ class Projects(models.Model):
 class SocialLink(models.Model):
     Page = models.CharField(max_length=50)
     Page_URL = models.URLField(max_length=200)
-    owner = models.ForeignKey("Figure", on_delete=models.CASCADE)
+    owner = models.ForeignKey(Figure, on_delete=models.CASCADE)
     
     def __str__(self):
         return f"{self.Page}"
@@ -35,9 +35,9 @@ class SocialLink(models.Model):
 class Testimonial(models.Model):
     ClientName = models.CharField(max_length=50)
     Comment = models.TextField(max_length=120)
-    Position = models.CharField(max_length=50)
-    ImageURL = models.ImageField(upload_to='images/')
-    owner = models.ForeignKey("Figure", on_delete=models.CASCADE)
+    Position = models.CharField(max_length=50, blank=True, null=True)
+    ImageURL = models.ImageField(upload_to='images/', default='images/placeholder.jpeg')
+    owner = models.ForeignKey(Figure, on_delete=models.CASCADE)
     
     def __str__(self):
         return f"{self.ClientName}"
@@ -45,7 +45,7 @@ class Testimonial(models.Model):
 
 class Skillset(models.Model):
     Skill = models.CharField(max_length=50)
-    owner = models.ForeignKey("Figure", on_delete=models.CASCADE)
+    owner = models.ForeignKey(Figure, on_delete=models.CASCADE)
     
     def __str__(self):
         return f"{self.Skill}"
@@ -55,7 +55,7 @@ class Contact(models.Model):
     Phone = PhoneNumberField()
     Email = models.EmailField(max_length=254)
     Address = models.TextField()
-    owner = models.ForeignKey("Figure", on_delete=models.CASCADE)
+    owner = models.ForeignKey(Figure, on_delete=models.CASCADE)
     
     def __str__(self):
         return f"{self.owner.Firstname}"
