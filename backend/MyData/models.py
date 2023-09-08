@@ -5,7 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Figure(models.Model):
     Firstname = models.CharField(max_length=50)
     Lastname = models.CharField(max_length=50)
-    ImageURL = models.models.ImageField(upload_to='images/')
+    ImageURL = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return f"{self.Firstname} {self.Lastname}"
@@ -14,7 +14,7 @@ class Figure(models.Model):
 class Projects(models.Model):
     name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
-    Image = models.models.ImageField(upload_to='images/')
+    Image = models.ImageField(upload_to='images/')
     Owner = models.ForeignKey("Figure", on_delete=models.CASCADE, null=False, blank=False)
     Github_URL = models.URLField(max_length=200)
     Live_URL = models.URLField(max_length=200)
