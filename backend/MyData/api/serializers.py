@@ -46,7 +46,16 @@ class FigureSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Figure
-        fields = '__all__'
+        fields = [
+            'Firstname',
+            'Lastname',
+            'ImageURL',
+            'contact_set',
+            'skillset_set',
+            'testimonial_set',
+            'sociallink_set',
+            'projects_set'
+        ]
         
         
 class MessageSerializer(serializers.ModelSerializer):
