@@ -1,5 +1,7 @@
 import React from 'react';
 import { useMyData } from './context/UserContext';
+import Header from './components/Header';
+import Hero from './sections/Hero';
 
 function App() {
   const { myData, loading, error } = useMyData();
@@ -16,9 +18,10 @@ function App() {
   // ...
 
   return (
-    <div>
-      Hello World
-    </div>
+    <>
+      <Header />
+      <Hero />
+    </>
   );
 }
 

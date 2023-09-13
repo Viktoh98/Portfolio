@@ -6,4 +6,24 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  margin: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+#root {
+  height: 100vh;
+}
+
+.test {
+  color: #1280fd;
 }

@@ -1,9 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: "./src/**/*.{js,ts,jsx,tsx}",
+    extend: {
+      spacing: {
+        'full-viewport': '100%', // Customize the aspect ratio class
+      },
+      
+      colors: {
+        'primary': '#1280fd',
+      },
+
+      screens: {
+        'vs': {'max': '400px'}, // Custom screen size for very small screens
+      },
+
+    },
   },
   plugins: [],
 }
-
