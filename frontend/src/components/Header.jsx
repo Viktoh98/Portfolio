@@ -12,7 +12,7 @@ const Header = () => {
   }
   return (
     <header className="fixed right-0 left-0 z-10 bg-white shadow-md">
-        <nav className="flex justify-between items-center pt-4">
+        <nav className="flex justify-between items-center pt-4 pb-2">
           <div className="flex flex-1 pl-8 font-extrabold text-2xl sm:text-[2rem] text-primary"> <h3>Vict<i className="fas fa-circle-half-stroke rotate-90"></i>r</h3> </div>
           <ul className="hidden sm:flex flex-auto justify-around items-center">
             {['Home', 'About', 'Testimonials', 'Project'].map( (item, index) => {
