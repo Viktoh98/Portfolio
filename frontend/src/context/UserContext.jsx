@@ -12,7 +12,6 @@ export function MyDataProvider({ children }) {
     async function fetchData() {
       try {
         const response = await axios.get('http://127.0.0.1:8000/api/');
-        console.log(response.data)
         setMyData(response.data);
         setLoading(false);
       } catch (error) {

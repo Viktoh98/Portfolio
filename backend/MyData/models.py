@@ -45,6 +45,7 @@ class Testimonial(models.Model):
 
 class Skillset(models.Model):
     Skill = models.CharField(max_length=50)
+    progress = models.PositiveIntegerField(default=75)
     owner = models.ForeignKey(Figure, on_delete=models.CASCADE)
     
     def __str__(self):

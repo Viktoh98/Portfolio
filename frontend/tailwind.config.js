@@ -12,6 +12,8 @@ export default {
       
       colors: {
         'primary': '#1280fd',
+        'secondary': '#011a6dfa',
+        'dark': '#222'
       },
 
       screens: {

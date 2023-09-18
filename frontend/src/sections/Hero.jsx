@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState} from "react";
 import { motion } from "framer-motion"
 import { useMyData } from "../context/UserContext";
 
@@ -18,11 +18,11 @@ const Hero = () => {
       };
     
     return (
-        <section id="Hero" className="relative pt-24 md:pt-0 max-h-screen">
+        <section id="Hero" className="relative pt-24 md:pt-0 lg:h-[42rem]">
             <i className="fab fa-react text-white font-bold text-[14rem] lg:text-[20rem] absolute -translate-x-[50%] -translate-y-[50%] left-[50%] top-[50%] opacity-0 md:opacity-50"></i>
             <i className="fab fa-python font-bold text-[8rem] lg:text-[12rem] absolute opacity-10 left-[8%] bottom-[10%]"></i>
-            <div id="Hero__container" className="h-fit md:grid md:grid-cols-2 md:grid-rows-1 grid-rows-2 flex flex-col-reverse justify-center items-center mx-auto md:gap-5 px-4 md:px-0 ">
-                <div className=" xl:pt-[1rem] lg:pt-[8rem] md:pt-[12rem] pt-8 text-center flex items-center justify-center flex-col h-full px-1 py-2">
+            <div id="Hero__container" className="h-full md:grid md:grid-cols-2 md:grid-rows-1 grid-rows-2 flex flex-col-reverse justify-center items-center mx-auto md:gap-5 px-4 md:px-0 ">
+                <div className="lg:pt-[8rem] md:pt-[9.5rem] pt-8 text-center flex items-center justify-center flex-col h-full px-1 py-2">
                     <div className=" max-w-[32.5rem]">
                         <div className="h-5 relative">
                             <span className="text-[8rem] font-serif absolute sm:text-[12rem] top-[38%] left-0  text-slate-300 -translate-y-[38%]">
