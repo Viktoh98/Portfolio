@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from ..models import Figure, Projects, SocialLink, Testimonial, Skillset, Contact, Message
+from django.urls import reverse
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -31,10 +32,11 @@ class ContactSerializer(serializers.ModelSerializer):
         model = Contact
         exclude = ['owner']
         
-        
-def checkMany(model):
-    return model.objects.all().count() > 1
 
+# class ResumeSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Figure
+#         fields = ['Resume']
 
 
 class FigureSerializer(serializers.ModelSerializer):
@@ -43,6 +45,7 @@ class FigureSerializer(serializers.ModelSerializer):
     testimonial_set = TestimonialSerializer(read_only=True, many=True)
     sociallink_set = SocialLinkSerializer(read_only=True, many=True)
     projects_set = ProjectSerializer(read_only=True, many=True)
+    resume_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Figure
@@ -54,8 +57,13 @@ class FigureSerializer(serializers.ModelSerializer):
             'skillset_set',
             'testimonial_set',
             'sociallink_set',
-            'projects_set'
+            'projects_set',
+            'resume_url'
         ]
+        
+    def get_resume_url(self, obj):
+        if obj.resume:
+            return reverse('download_resume', args=[obj.id])
         
         
 class MessageSerializer(serializers.ModelSerializer):

@@ -6,6 +6,7 @@ class Figure(models.Model):
     Firstname = models.CharField(max_length=50)
     Lastname = models.CharField(max_length=50)
     ImageURL = models.ImageField(upload_to='images/')
+    resume = models.FileField(upload_to='uploads/', max_length=100, null=True, blank=True)
 
     def __str__(self):
         return f"{self.Firstname} {self.Lastname}"
@@ -30,6 +31,18 @@ class SocialLink(models.Model):
     
     def __str__(self):
         return f"{self.Page}"
+    
+    
+class Education(models.Model):
+    Institution = models.CharField(max_length=50)
+    Certification = models.CharField(max_length=50)
+    Country = models.CharField(max_length=50, null=True)
+    Entry_year = models.IntegerField()
+    Final_year = models.IntegerField()
+    owner = models.ForeignKey(Figure, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"{self.Certification}"
     
     
 class Testimonial(models.Model):
