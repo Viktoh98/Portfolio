@@ -4,6 +4,8 @@ import Header from './components/Header';
 import Skill from './sections/Skill';
 import Hero from './sections/Hero';
 import Qualification from './sections/Qualification';
+import Project from './sections/Project';
+import Contact from './sections/Contact';
 
 
 
@@ -18,15 +20,14 @@ function App() {
     return <div>Error: {error.message}</div>;
   }
 
-  // Now you can use myData in this component
-  // ...
-
   return (
     <>
       <Header />
       <Hero />
       <Skill />
       <Qualification />
+      <Project />
+      <Contact />
     </>
   );
 }

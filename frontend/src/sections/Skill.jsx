@@ -20,14 +20,12 @@ const Skill = () => {
                     className="divider"></motion.hr>
             </div>
             
-            <div 
-                  
-                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-around mx-auto py-16 gap-6 gap-y-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-around mx-auto py-16 gap-6 gap-y-8 w-[95%]">
                 {skillSet.map( item => {
                         return(
                             <div className="flex flex-col items-center justify-center gap-4 shadow-md pt-6" key={item.id} >
                                 <CircularProgressBar progress={item.progress} />
-                                <h3 className="font-bold text-secondary pb-6 text-2xl italic">{item.Skill}</h3>
+                                <h3 className="font-bold text-primary pb-6 text-2xl italic">{item.Skill}</h3>
                             </div>
                         )
                     } 
