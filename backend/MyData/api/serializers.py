@@ -7,32 +7,32 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Projects
         exclude = ['owner']
-        
-        
+
+
 class SocialLinkSerializer(serializers.ModelSerializer):
     class Meta:
         model = SocialLink
         exclude = ['owner']
-        
-        
+
+
 class TestimonialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Testimonial
         exclude = ['owner']
-        
-        
+
+
 class SkillsetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Skillset
         exclude = ['owner']
-        
-        
+
+
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         exclude = ['owner']
-        
-        
+
+
 class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Education
@@ -62,15 +62,20 @@ class FigureSerializer(serializers.ModelSerializer):
             'education_set',
             'resume_url'
         ]
-        
+
     def get_resume_url(self, obj):
         request = self.context.get('request')
         if request:
-            download_url = request.build_absolute_uri(reverse('download_resume', args=[obj.id]))
+            download_url = request.build_absolute_uri(
+                reverse('download_resume', args=[obj.id]))
             return download_url
-        
-        
+
+
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
         fields = '__all__'
+
+
+class CSRFTokenSerializer(serializers.Serializer):
+    csrf_token = serializers.CharField()
