@@ -20,7 +20,7 @@ const Skill = () => {
         ></motion.hr>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 justify-around mx-auto py-16 gap-6 gap-y-8 w-[95%]">
+      <div className="grid grid-cols-2 sm:grid-cols-3 justify-around mx-auto py-16 gap-6 gap-y-8 w-[95%]">
         {skillSet.map((item) => {
           return (
             <div
