@@ -49,15 +49,12 @@ const Contact = () => {
     setSubmitted(true);
     if (csrfToken) {
       try {
-        const response = await axios.post(
-          "http://127.0.0.1:8000/api/message/",
-          data,
-          {
-            headers: {
-              "X-CSRFToken": csrfToken.csrf_token,
-            },
-          }
-        );
+        const API_URL = import.meta.env.VITE_API_URL;
+        const response = await axios.post(`${API_URL}message/`, data, {
+          headers: {
+            "X-CSRFToken": csrfToken.csrf_token,
+          },
+        });
         setError(false);
         setData({
           name: "",

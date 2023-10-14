@@ -18,6 +18,7 @@ pylint-django = "*"
 pillow = "*"
 django-phonenumber-field = "*"
 phonenumbers = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

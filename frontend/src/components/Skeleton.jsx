@@ -71,6 +71,7 @@ const Skeleton = () => {
           <div className="flex h-fit w-full py-12 justify-center gap-4">
             {new Array(1, 2, 3, 4).map((_) => (
               <motion.div
+                key={_}
                 variants={childVariant}
                 className="h-14 vs:h-12 vs:w-12 w-14 rounded-full bg-slate-300"
               ></motion.div>

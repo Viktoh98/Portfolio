@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { createContext, useContext, useState, useEffect } from "react";
+import axios from "axios";
 
 const MyDataContext = createContext();
 
@@ -11,7 +11,8 @@ export function MyDataProvider({ children }) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/');
+        const API_URL = import.meta.env.VITE_API_URL;
+        const response = await axios.get(API_URL);
         setMyData(response.data);
         setLoading(false);
       } catch (error) {

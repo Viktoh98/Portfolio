@@ -48,7 +48,7 @@ const Hero = () => {
         id="Hero__container"
         className="h-full lg:grid lg:grid-cols-2 lg:grid-rows-1 grid-rows-2 flex flex-col-reverse justify-center items-center mx-auto lg:gap-5 px-4 lg:px-0"
       >
-        <div className="lg:pt-[8rem] text-center flex items-center justify-center flex-col lg:h-full px-1 h-screen pt-20 lg:py-2">
+        <div className="lg:pt-[8rem] text-center flex items-center justify-center flex-col lg:h-full px-1 pt-20 lg:py-2">
           <div className=" max-w-[32.5rem]">
             <div className="h-5 relative">
               <span className="text-[8rem] font-serif absolute sm:text-[12rem] top-[38%] left-0  text-slate-300 -translate-y-[38%]">
@@ -113,9 +113,9 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="lg:bg-slate-100 flex justify-center items-center pt-32 lg:pt-16 pb-12 lg:pb-0 lg:h-full">
+        <div className="lg:bg-slate-100 h-screen flex justify-center items-center pt-28 lg:pt-28 pb-12 lg:pb-0 lg:h-full">
           <div className="lg:flex flex-col items-center justify-center">
-            <div className="bg-primary vs:h-[250px] vs:w-[250px] h-[350px] w-[350px] py-8 px-8 rounded-full shadow-xl md:shadow-none mb-16">
+            <div className="bg-primary vs:h-[260px] vs:w-[260px] h-[330px] w-[330px] mt-8 py-8 px-8 rounded-full shadow-xl md:shadow-none mb-14">
               <img
                 src={data.ImageURL}
                 alt="my-image"
